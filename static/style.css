@@ -1,0 +1,211 @@
+/* =========================
+   Global Styles
+========================= */
+body {
+  background-color: #f5f7fa;   /* Light gray/blue background */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+/* Links */
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+a:hover {
+  color: #0080ff;
+}
+
+/* =========================
+   Header & Navigation
+========================= */
+/* Header container */
+header {
+  background-color: #1e1e2f;  /* Dark header */
+  padding: 15px 30px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Flex layout for logo + nav */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* Highlight part of the name */
+.highlight {
+  color: #00c3ff;
+}
+
+/* Navigation links */
+nav a {
+  margin-left: 20px;
+  font-weight: 500;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #00c3ff;
+  color: #1e1e2f;
+}
+
+/* Highlight the current page */
+nav a.active {
+  background-color: #0080ff;
+  color: #fff;
+}
+
+
+/* =========================
+   Sections (Cards)
+========================= */
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;  /* White cards */
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn, button {
+  background: #2c3e50;
+  color: #fff;   /* White text */
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn:hover, button:hover {
+  background: #0080ff;
+}
+
+/* =========================
+   Skills Grid
+========================= */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skill {
+  background: #63e0ff;
+  color: #2c3e50;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   Projects
+========================= */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s;
+  text-align: center;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+}
+.project-card h2 {
+  margin-top: 0;
+}
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0077cc;
+  font-weight: bold;
+}
+.project-card a:hover {
+  color: #0080ff;
+}
+
+/* =========================
+   Contact Form
+========================= */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* =========================
+   Footer (Optional)
+========================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e1e2f;
+  color: white;
+  margin-top: 40px;
+}
