@@ -27,10 +27,10 @@ def get_contact_page():
     return FileResponse("static/contact.html")
 
 
-# Contact form API (POST)
-@app.post("/contact")
-def contact(data: Contact):
-    return {"message": f"Thanks {data.name}, your message was received!"}
+# # Contact form API (POST)
+# @app.post("/contact")
+# def contact(data: Contact):
+#     return {"message": f"Thanks {data.name}, your message was received!"}
 
 
 # Projects page (HTML)
@@ -44,24 +44,24 @@ def skills():
     return FileResponse("static/skills.html")
 
 
-# Projects API (JSON data)
-@app.get("/api/projects")
-def get_projects():
-    projects = [
-        {
-            "title": "Portfolio Website",
-            "description": "A personal portfolio built with FastAPI and JavaScript.",
-            "link": "https://github.com/shradhn97"
-        },
-        {
-            "title": "Blog API",
-            "description": "A REST API for managing blog posts and comments.",
-            "link": "https://github.com/shradhn97"
-        },
-        {
-            "title": "Data Dashboard",
-            "description": "Interactive dashboard for visualizing data using Python and D3.js.",
-            "link": "https://github.com/shradhn97"
-        }
-    ]
-    return {"projects": projects}
+# # Projects API (JSON data)
+# @app.get("/api/projects")
+# def get_projects():
+#     projects = [
+#         {
+#             "title": "Portfolio Website",
+#             "description": "A personal portfolio built with FastAPI and JavaScript.",
+#             "link": "https://github.com/shradhn97"
+#         },
+#         {
+#             "title": "Blog API",
+#             "description": "A REST API for managing blog posts and comments.",
+#             "link": "https://github.com/shradhn97"
+#         },
+#         {
+#             "title": "Data Dashboard",
+#             "description": "Interactive dashboard for visualizing data using Python and D3.js.",
+#             "link": "https://github.com/shradhn97"
+#         }
+#     ]
+#     return {"projects": projects}

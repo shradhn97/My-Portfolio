@@ -2,35 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Me-My Portfolio</title>
+  <title>About Me</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header loads here -->
   <div id="header"></div>
 
   <main>
-    <section id="about-page">
+    <section id="about">
       <h2>About Me</h2>
       <p>
-        Hello! I'm <strong>Shradhananda_Mishra</strong>, a software developer who loves building 
-        modern, fast, and scalable applications. My main focus is on 
-        <span class="highlight">Python (FastAPI)</span> for backend development and 
-        <span class="highlight">JavaScript</span> for creating interactive frontends.
+        I am <strong>Shradhananda Mishra</strong>, a software developer who loves building modern, scalable applications
+        with Python, FastAPI, and JavaScript.  
+        I thrive on problem-solving and enjoy transforming ideas into impactful solutions.
       </p>
       <p>
-        I enjoy solving real-world problems with code, learning new technologies, 
-        and contributing to open-source projects. When I’m not coding, I like 
-        reading, traveling, and exploring new ideas in tech.
+        Beyond coding, I am passionate about movies 🎬, exploring new technologies, and creating meaningful content.
       </p>
-      <a class="btn" href="/static/Shradhananda_Mishra.pdf" download>📄 Download My CV</a>
     </section>
   </main>
 
-  <!-- Footer -->
-  <div id="footer"></div>
-
-  <script src="/static/script.js"></script>
+  <!-- JS to load header -->
+  <script>
+    fetch("/static/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+        document.querySelectorAll("nav a").forEach(link => {
+          if (link.getAttribute("href") === "/static/about.html") {
+            link.classList.add("active");
+          }
+        });
+      });
+  </script>
 </body>
 </html>
+
+
+<!-- Footer loads here -->
+<div id="footer"></div>
+
+<script>
+  // Load header
+  fetch("/static/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Highlight current nav link
+      const path = window.location.pathname;
+      document.querySelectorAll("nav a").forEach(link => {
+        if (link.getAttribute("href") === path || link.getAttribute("href") === window.location.pathname) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+  // Load footer
+  fetch("/static/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>

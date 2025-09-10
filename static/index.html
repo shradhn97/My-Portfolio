@@ -2,61 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
-  <header>
-    <div class="nav-container">
-      <!-- Logo / Name -->
-      <h1 class="logo">👋 Hi, I'm <span class="highlight">Shradhananda Mishra</span></h1>
+  <!-- Header loads here -->
+  <div id="header"></div>
 
-      <!-- Navigation -->
-      <nav>
-        <a href="/" class="active">Home</a>
-        <a href="/static/about.html">About</a>
-        <a href="/skills">Skills</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ===== Main Content ===== -->
   <main>
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Me</h2>
+    <!-- Hero Section -->
+    <section id="hero">
+      <h1>Welcome to My Portfolio 🚀</h1>
       <p>
-        I am Shradhananda Mishra, a passionate software developer with a strong focus on building modern, scalable web applications using Python, FastAPI, and JavaScript.
-        I thrive on solving complex problems and transforming ideas into impactful digital solutions that make a difference.
-        Beyond coding, I enjoy exploring new technologies and continuously learning.
+  Hi, I’m <strong>Shradhananda Mishra</strong>, a passionate software developer dedicated to creating efficient and scalable web applications.  
+  I specialize in building robust backend systems using Python and FastAPI, designing interactive and responsive frontends with JavaScript, and managing data effectively with PostgreSQL.  
+  My work focuses on solving real-world problems, from automating workflows and developing data-driven applications to building full-stack solutions that deliver measurable impact for users and businesses.  
+  I thrive on learning new technologies, tackling complex challenges, and transforming innovative ideas into reliable, high-quality digital products.
+</p>
+  
+      <a class="btn" href="/projects">View My Projects</a>
+      <a class="btn" href="/contact">Let’s Connect</a>
+    </section>
+ <main>
+
+    <!-- Experience Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-item">
+      <h3>Software Developer | Iserveu <Pvt class="ltd"></Pvt></h3>
+      <span class="duration">Jan 2023 - Present</span>
+      <p>
+        Developed and maintained web applications using Python, FastAPI, and JavaScript.
+        Implemented REST APIs, database integration with PostgreSQL, and interactive frontend components.
       </p>
-      <a class="btn" href="/static/Shradhananda_Mishra.pdf" download>✅ Download CV</a>
-    </section>
+    </div>
+    <div class="experience-item">
+      <h3>Internship</h3>
+      <span class="duration">Jun 2022 - Dec 2022</span>
+      <p>
+        Assisted in building backend APIs with Django and performed data analysis using Python.
+        Collaborated with the frontend team to improve UI/UX of client applications.
+      </p>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>My Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">🐍 Python</div>
-        <div class="skill">⚡ FastAPI</div>
-        <div class="skill">🌐 JavaScript</div>
-        <div class="skill">🎨 HTML & CSS</div>
-        <div class="skill">🗄️ SQL</div>
-        <div class="skill">☁️ Deployment</div>
-      </div>
-    </section>
-  </main>
+<!-- Experience Section -->
+    <div class="experience-item">
+      <h3>Software Developer | Cognizant <Pvt class="ltd">
 
-  <!-- ===== Footer ===== -->
-  <footer>
-    <p>© 2025 Shradhananda Mishra. All rights reserved.</p>
-  </footer>
-
-  <script src="/static/script.js"></script>
+      </Pvt></h3>
+      <span class="duration">Jan 2023 - Present</span>
+      <p>
+        Developed and maintained web applications using Python, FastAPI, and JavaScript.
+        Implemented REST APIs, database integration with PostgreSQL, and interactive frontend components.
+      </p>
+    </div>
+  <!-- JS to load header -->
+  <script>
+    fetch("/static/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+        const path = window.location.pathname;
+        document.querySelectorAll("nav a").forEach(link => {
+          if (link.getAttribute("href") === path) {
+            link.classList.add("active");
+          }
+        });
+      });
+  </script>
 </body>
 </html>
+<!-- Footer loads here -->
+<div id="footer"></div>
+
+<script>
+  // Load header
+  fetch("/static/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Highlight current nav link
+      const path = window.location.pathname;
+      document.querySelectorAll("nav a").forEach(link => {
+        if (link.getAttribute("href") === path || link.getAttribute("href") === window.location.pathname) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+  // Load footer
+  fetch("/static/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
