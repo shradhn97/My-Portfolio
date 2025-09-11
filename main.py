@@ -40,6 +40,10 @@ def get_projects_page():
 def skills():
     return FileResponse("static/skills.html")
 
+@app.get("/about")
+def about():
+    return FileResponse("static/about.html")
+
 # # Contact form API (POST)
 # @app.post("/contact")
 # def contact(data: Contact):

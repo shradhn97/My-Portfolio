@@ -1,59 +1,73 @@
-/* General Reset */
+/* ===============================
+   GLOBAL RESET & BASE STYLES
+=================================*/
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f5f7fa;
   color: #333;
 }
-.logo a {
+
+/* Links */
+a {
   text-decoration: none;
-  color: #fff;        /* white text */
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;    /* makes it obviously clickable */
   transition: color 0.3s ease;
 }
 
-.logo a:hover {
-  color: #00c3ff;     /* hover effect */
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #2c3e50;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
+.btn:hover {
+  background: #0080ff;
+}
 
-
-/* Header Navigation */
+/* ===============================
+   HEADER & NAVIGATION
+=================================*/
 header {
   background: #2c3e50;
   padding: 15px 20px;
   color: #fff;
 }
+
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
-nav a {
+
+/* Logo */
+.logo a {
   color: #fff;
-  text-decoration: none;
-  margin-left: 15px;
+  font-size: 1.5rem;
   font-weight: bold;
-}
-nav a.active {
-  border-bottom: 2px solid #00c3ff;
+  cursor: pointer;
 }
 
-/* Navbar styling */
+.logo a:hover {
+  color: #00c3ff;
+}
+
+/* Navbar */
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #333;
+  color: #fff; /* links white */
   font-weight: 500;
   padding: 8px 12px;
   border-radius: 5px;
@@ -73,24 +87,9 @@ nav ul li a.active {
   color: #fff;
 }
 
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-nav ul li a:hover {
-  background-color: #007bff;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-/* Sections */
+/* ===============================
+   SECTIONS (General)
+=================================*/
 section {
   max-width: 1000px;
   margin: 30px auto;
@@ -107,16 +106,9 @@ section {
   margin: 40px 0 20px 0;
 }
 
-/* Separate grids for technical and creative skills */
-.technical-skills .skill {
-  color: #fff;
-}
-
-.creative-skills .skill {
-  color: #fff;
-}
-
-/* Keep existing skill styles for hover, layout */
+/* ===============================
+   SKILLS SECTION
+=================================*/
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -150,25 +142,30 @@ section {
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+.technical-skills .skill,
+.creative-skills .skill {
+  color: #fff;
+}
 
-
-/* Projects Section */
+/* ===============================
+   PROJECTS SECTION
+=================================*/
 .projects-grid {
   display: flex;
-  flex-wrap: wrap;          /* Wrap to new line if needed */
-  gap: 20px;                /* Space between cards */
-  justify-content: center;  /* Center align horizontally */
-  align-items: stretch;     /* 🔥 Makes all cards equal height */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
   margin: 20px auto;
   max-width: 1200px;
 }
 
 .project-card {
-  flex: 1 1 calc(33.33% - 40px); /* 3 cards per row */
+  flex: 1 1 calc(33.33% - 40px);
   min-width: 280px;
   max-width: 350px;
-  display: flex;                /* 🔥 Makes inner layout flexible */
-  flex-direction: column;       /* Stack content vertically */
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border-radius: 12px;
   padding: 20px;
@@ -188,119 +185,27 @@ iframe {
   margin-top: 10px;
 }
 
-/* Ensure button stays at bottom */
 .project-card a.btn {
-  margin-top: auto;  /* 🔥 Push button to bottom */
+  margin-top: auto;
   text-align: center;
 }
 
-.project-card {
-  flex: 1 1 calc(33.33% - 40px); /* 3 cards per row (minus gap space) */
-  max-width: 350px;              /* Prevents card from being too wide */
-  min-width: 280px;              /* Keeps responsive on smaller screens */
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-}
-
-.project-image,
-.project-video,
-iframe {
-  width: 100%;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  background: #2c3e50;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-.btn:hover {
-  background: #0080ff;
-}
-
-/* Contact List */
-.contact-list {
-  list-style: none;
-  padding: 0;
-}
-.contact-list li {
-  margin: 10px 0;
-  font-size: 1.1rem;
-}
-.contact-list a {
-  color: #0080ff;
-  text-decoration: none;
-}
-.contact-list a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  background: #2c3e50;
-  color: #fff;
-  text-align: center;
-  padding: 20px 15px;
-  margin-top: 40px;
-}
-.footer-links a {
-  color: #00c3ff;
-  margin: 0 10px;
-  text-decoration: none;
-}
-.footer-links a:hover {
-  color: #fff;
-}
-
-/* ✅ Responsive Media Queries */
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-}
-
-@media (max-width: 500px) {
-  body {
-    font-size: 14px;
-  }
-  h1.logo {
-    font-size: 1.3rem;
-  }
-  section {
-    padding: 15px;
-  }
-}
+/* ===============================
+   EXPERIENCE SECTION
+=================================*/
 #experience {
-  padding: 60px 20px;
+  padding: 40px 20px; /* reduced space */
   background-color: #f9f9f9;
 }
 
 #experience h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .experience-item {
   max-width: 800px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 20px auto; /* less spacing */
   padding: 20px;
   border-left: 4px solid #007bff;
   background-color: #fff;
@@ -318,15 +223,17 @@ footer {
   margin-bottom: 10px;
 }
 
-#achievements 
-{
-  padding: 60px 20px;
+/* ===============================
+   ACHIEVEMENTS SECTION
+=================================*/
+#achievements {
+  padding: 40px 20px; /* reduced space */
   background-color: #f0f8ff;
 }
 
 #achievements h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .achievement-list {
@@ -372,4 +279,74 @@ footer {
 
 .view-more .btn:hover {
   background: #0056b3;
+}
+
+/* ===============================
+   CONTACT SECTION
+=================================*/
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.contact-list a {
+  color: #0080ff;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   FOOTER
+=================================*/
+footer {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 20px 15px;
+  margin-top: 40px;
+}
+
+.footer-links a {
+  color: #00c3ff;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* ===============================
+   RESPONSIVE MEDIA QUERIES
+=================================*/
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1.logo {
+    font-size: 1.3rem;
+  }
+
+  section {
+    padding: 15px;
+  }
 }
