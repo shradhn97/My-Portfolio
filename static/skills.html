@@ -13,29 +13,44 @@
 
   <!-- Main Content -->
   <main>
-    <section>
+    <section id="skills">
       <h2>My Skills</h2>
-      <p style="text-align: center; max-width: 700px; margin: 0 auto 20px;">
-        These are the tools and technologies I’ve worked with to build projects, 
-        APIs, dashboards, and scalable web apps.  
-        I constantly keep learning and upgrading myself in modern development stacks.
+      <p style="text-align: left; max-width: 700px; margin: 0 auto 40px;">
+        These are the tools and technologies I’ve worked with to build projects, APIs, dashboards, 
+        and scalable web apps. I constantly keep learning and upgrading myself in modern development stacks.
       </p>
-      <div class="skills-grid">
-        <div class="skill">🐍 Python</div>
-        <div class="skill">⚡ FastAPI</div>
-        <div class="skill">🌐 JavaScript</div>
-        <div class="skill">🎨 HTML & CSS</div>
-        <div class="skill">🗄️ SQL</div>
-        <div class="skill">📊 Data Visualization</div>
-        <div class="skill">🔥 PySpark</div>
-        <div class="skill">🔗 REST APIs</div>
-        <div class="skill">☁️ Cloud Deployment</div>
-        <div class="skill">🤖 Machine Learning (Basics)</div>
+
+      <!-- Technical Skills -->
+      <h3 class="skills-section-title">Technical Skills</h3>
+      <div class="skills-grid technical-skills">
+        <div class="skill" style="background: #306998;"><span>🐍</span>Python</div>
+        <div class="skill" style="background: #009688;"><span>⚡</span>FastAPI</div>
+        <div class="skill" style="background: #f7df1e; color: #000;"><span>🌐</span>JavaScript</div>
+        <div class="skill" style="background: #e34f26;"><span>🎨</span>HTML & CSS</div>
+        <div class="skill" style="background: #264de4;"><span>🗄️</span>SQL</div>
+        <div class="skill" style="background: #ff6f61;"><span>📊</span>Data Visualization</div>
+        <div class="skill" style="background: #f7931e;"><span>🔥</span>PySpark</div>
+        <div class="skill" style="background: #4caf50;"><span>🔗</span>REST APIs</div>
+        <div class="skill" style="background: #03a9f4;"><span>☁️</span>Cloud Deployment</div>
+        <div class="skill" style="background: #9c27b0;"><span>🤖</span>Machine Learning</div>
       </div>
+          <!-- Creative Skills -->
+      <h3 class="skills-section-title">Creative / Editing Skills</h3>
+      <div class="skills-grid creative-skills">
+        <div class="skill" style="background: #ff6f61;"><span>🧣</span>Photoshop</div>
+        <div class="skill" style="background: #f44336;"><span>⚡</span>Premiere Pro</div>
+        <div class="skill" style="background: #3f51b5;"><span>🎰</span>Capcut PC</div>
+        <div class="skill" style="background: #ff9800;"><span>🎨</span>Canva</div>
+        <div class="skill" style="background: #607d8b;"><span>📡</span>Audacity</div>
+      </div>
+
     </section>
   </main>
 
-  <!-- JS to load header -->
+  <!-- Footer loads here -->
+  <div id="footer"></div>
+
+  <!-- JS to load header and footer -->
   <script>
     fetch("/static/header.html")
       .then(res => res.text())
@@ -50,35 +65,13 @@
           }
         });
       });
+
+    fetch("/static/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
   </script>
 
 </body>
 </html>
-
-
-<!-- Footer loads here -->
-<div id="footer"></div>
-
-<script>
-  // Load header
-  fetch("/static/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-
-      // Highlight current nav link
-      const path = window.location.pathname;
-      document.querySelectorAll("nav a").forEach(link => {
-        if (link.getAttribute("href") === path || link.getAttribute("href") === window.location.pathname) {
-          link.classList.add("active");
-        }
-      });
-    });
-
-  // Load footer
-  fetch("/static/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    });
-</script>

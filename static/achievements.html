@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Achievements - Shradhananda Mishra</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Header loads -->
+  <div id="header"></div>
+
+  <main>
+    <section id="achievements-full">
+      <h1>My Achievements 🏆</h1>
+
+      <div class="achievement-item">
+        <h3>Top Performer in Hackathon 2023</h3>
+        <p>
+          Led a team of 4 developers and built a real-time collaboration platform
+          using FastAPI and WebSockets. Won 1st place at the event.
+        </p>
+      </div>
+
+      <div class="achievement-item">
+        <h3>Open Source Contributor</h3>
+        <p>
+          Actively contributed to Python and JavaScript projects on GitHub, enhancing
+          code quality and documentation. Received recognition from project maintainers.
+        </p>
+      </div>
+
+      <div class="achievement-item">
+        <h3>Certified FastAPI Developer</h3>
+        <p>
+          Completed advanced certification in FastAPI, showcasing expertise in API
+          development, authentication systems, and deployment pipelines.
+        </p>
+      </div>
+
+      <div class="achievement-item">
+        <h3>Published Technical Blogs</h3>
+        <p>
+          Authored multiple blogs on Python, FastAPI, and software development best
+          practices, with over 5,000 combined reads on Medium and Dev.to.
+        </p>
+      </div>
+
+      <div class="achievement-item">
+        <h3>Mentorship & Community Work</h3>
+        <p>
+          Guided junior developers in Python and web technologies through workshops,
+          online sessions, and open-source mentoring programs.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer loads -->
+  <div id="footer"></div>
+
+  <script>
+    // Load header
+    fetch("/static/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+
+    // Load footer
+    fetch("/static/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+</body>
+</html>

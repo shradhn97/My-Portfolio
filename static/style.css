@@ -5,6 +5,20 @@ body {
   background-color: #f5f7fa;
   color: #333;
 }
+.logo a {
+  text-decoration: none;
+  color: #fff;        /* white text */
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;    /* makes it obviously clickable */
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #00c3ff;     /* hover effect */
+}
+
+
 
 /* Header Navigation */
 header {
@@ -28,6 +42,54 @@ nav a.active {
   border-bottom: 2px solid #00c3ff;
 }
 
+/* Navbar styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Active page highlight */
+nav ul li a.active {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.05);
+}
+
 /* Sections */
 section {
   max-width: 1000px;
@@ -38,46 +100,121 @@ section {
   box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Skills Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
-}
-.skill {
-  background: #63e0ff;
-  color: #2c3e50;
-  padding: 12px;
+.skills-section-title {
   text-align: center;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: transform 0.2s;
-}
-.skill:hover {
-  transform: scale(1.05);
+  font-size: 1.5rem;
+  color: #333;
+  margin: 40px 0 20px 0;
 }
 
-/* Projects Grid */
-.projects-grid {
+/* Separate grids for technical and creative skills */
+.technical-skills .skill {
+  color: #fff;
+}
+
+.creative-skills .skill {
+  color: #fff;
+}
+
+/* Keep existing skill styles for hover, layout */
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
-.project-card {
-  background: #fdfdfd;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
+  font-weight: bold;
+  border-radius: 12px;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.skill span {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.skill:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+
+/* Projects Section */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;          /* Wrap to new line if needed */
+  gap: 20px;                /* Space between cards */
+  justify-content: center;  /* Center align horizontally */
+  align-items: stretch;     /* 🔥 Makes all cards equal height */
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.project-card {
+  flex: 1 1 calc(33.33% - 40px); /* 3 cards per row */
+  min-width: 280px;
+  max-width: 350px;
+  display: flex;                /* 🔥 Makes inner layout flexible */
+  flex-direction: column;       /* Stack content vertically */
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
-.project-image, .project-video {
+
+.project-image,
+.project-video,
+iframe {
   width: 100%;
   border-radius: 8px;
-  margin: 10px 0;
+  margin-top: 10px;
+}
+
+/* Ensure button stays at bottom */
+.project-card a.btn {
+  margin-top: auto;  /* 🔥 Push button to bottom */
+  text-align: center;
+}
+
+.project-card {
+  flex: 1 1 calc(33.33% - 40px); /* 3 cards per row (minus gap space) */
+  max-width: 350px;              /* Prevents card from being too wide */
+  min-width: 280px;              /* Keeps responsive on smaller screens */
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.project-image,
+.project-video,
+iframe {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
 /* Buttons */
@@ -218,4 +355,21 @@ footer {
 
 .achievement-item p {
   color: #555;
+}
+
+.view-more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-more .btn {
+  padding: 10px 30px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.view-more .btn:hover {
+  background: #0056b3;
 }

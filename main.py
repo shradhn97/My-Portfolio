@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-
+import os
 app = FastAPI()
 
 # Serve static files (CSS, JS, images, HTML, etc.)
@@ -26,14 +26,11 @@ def get_home():
 def get_contact_page():
     return FileResponse("static/contact.html")
 
-
-# # Contact form API (POST)
-# @app.post("/contact")
-# def contact(data: Contact):
-#     return {"message": f"Thanks {data.name}, your message was received!"}
+@app.get("/achievements")
+def get_achievement():
+    return FileResponse("static/achievements.html")
 
 
-# Projects page (HTML)
 @app.get("/projects")
 def get_projects_page():
     return FileResponse("static/projects.html")
@@ -42,6 +39,14 @@ def get_projects_page():
 @app.get("/skills")
 def skills():
     return FileResponse("static/skills.html")
+
+# # Contact form API (POST)
+# @app.post("/contact")
+# def contact(data: Contact):
+#     return {"message": f"Thanks {data.name}, your message was received!"}
+
+
+# Projects page (HTML)
 
 
 # # Projects API (JSON data)
