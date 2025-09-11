@@ -72,23 +72,15 @@ Implement contact form email notifications
 👉 To make it look **really professional**, I recommend:  
 1. Adding **screenshots of each page** (`/static/screenshots/`) so they display nicely in README.  
 2. Replacing `yourdomain.com` with your real portfolio link.  
-3. Updating the email with your contact email.  
+3. Updating the email with your contact email.
 
-Do you want me to also **design a banner image** (like a hero header for README with your name + "Software Developer") that you can put at the top of `README.md`?
 📋 Roadmap
-
  Add animations & transitions
-
  Integrate blog section
-
  Add detailed case studies for projects
-
  Enable contact form email notifications
 
 📫 Contact Me
-
 📧 Email: your.email@example.com
-
 💻 GitHub: shradhn97
-
 💼 LinkedIn: Shradhananda Mishra
